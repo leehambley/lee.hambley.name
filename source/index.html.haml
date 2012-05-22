@@ -1,0 +1,135 @@
+- content_for :head do
+  %title Lee Hambley
+
+.page-header.noPrint
+  %h2 Recent Projects
+
+#projectCarousel.noPrint.carousel
+
+  .carousel-inner
+    .active.item
+      = image_tag 'projects/freiminuten.png', alt: ''
+      .carousel-caption
+        %h4 Freiminuten.de a bonus program for German pre-pay mobile phone owners.
+        :markdown
+          Freiminuten (literally *free minutes*) is a bonus program connected
+          to the TradeDoubler and Affili.net networks, earning revenue by
+          referring users to partner stores, and earning a small commission.
+
+          This commission is then given to their users as mobile phone credit.
+          Freiminuten also provides back-end services to mobile network operators
+          for crediting accounts via real-time APIs.
+
+    .item
+      = image_tag 'projects/watchedit.png', alt: ''
+      .carousel-caption
+        %h4 Watched.it
+        :markdown
+          This project I started in 2009, I'm working to build a product which works
+          across all platforms to eliminate the differences in scheduling, season
+          breaks, spoilers and everything else that makes watching TV suck.
+
+          Watched.it plugs into many common media players to automatically scrobble
+          (*track*, or *record*) which episodes, of which shows are watched, and sends
+          intelligent notifications about follow-ups, or othere interesting content.
+
+          Desktop client applications make it easy to see, at a glance which episodes
+          you have already seen. With simple integrations with iTunes and Amaozon VOD
+          it makes it a simple one-click process to buy the newest episodes when they become
+          available.
+
+  %a(class="carousel-control left"  href="#projectCarousel" data-slide="prev") &lsaquo;
+  %a(class="carousel-control right" href="#projectCarousel" data-slide="next") &rsaquo;
+
+.page-header
+  %h2 Education
+
+%dl
+  %dt
+    %i.icon-asterisk
+    Colón Language Center
+  %dd
+    :markdown
+      Deutsch als Femdsprache (*German as a foreign language*) (Current Level: *B1*)
+  %dt
+    %i.icon-asterisk
+    Burnley College, England
+  %dd
+    :markdown
+      A-Level Psychology, Business, Computer-Sciences &amp; (Short Course) Mathematics
+  %dt
+    %i.icon-asterisk
+    Mansfield Technology College
+  %dd
+    :markdown
+      **GCSEs:** English, Mathematics, Chemistry, Biology, Physics, Geography, Religious Education
+
+.page-header
+  %h2 Work History
+
+%dl
+  %dt
+    %i.icon-asterisk
+    Speach Media GmbH
+    %em
+      Hamburg, Germany 2010 - Present
+  %dd
+    :markdown
+      Speach Media's main project is Freiminuten.de; Acting as CTO, I ensure that we
+      make the correct technical decisions, and keep the platform moving in the right direction.
+      I am also their only developer. (*that part isn't so great!*)
+
+      I took over the project after the initial 8 week inception phase, after 12 months of
+      feature development and paying-back of *technical debt* we were able to focus on a variety
+      of improvements to the backend APIs which enable the platform to be autonomous, and run with
+      almost no human interaction.
+
+      The stack is Ruby on Rails, Resque, Elastic Search, Sinatra, [Middleman], SASS and HAML.
+      Running on top of a Chef managed [Linode] cluster running Ubuntu.
+
+      [Middleman]: http://www.middlemanapp.com/
+      [Linode]:    http://www.linode.com/
+
+  %dt
+    %i.icon-asterisk
+    Watched.it Limited
+    %em
+      2009 - Present
+  %dd
+    :markdown
+      I founded [Watched.it] in 2009 and have been working slowly but steadily on it since then.
+
+      Acting as founder, developer, product owner, accountant, marketeer, customer, debugger,
+      QA and designer has been tougher than I ever imagined it would be.
+
+      [Watched.it] works a lot like [last.fm], [scrobbling] the TV Shows that people watch on
+      their computers, or allowing them to manually scrobble using the web application, or via
+      their smartphone.
+
+      [Watched.it] provides an at-a-glance overview of which content is available, and which
+      contend has already been watched, allowing people to forget about ever-changing TV
+      schedules, release delays, mid-season breaks, and more.
+
+      The side-effect of providing a useful service to TV fans, is a a valuable insight into
+      realtime viewing patterns across all mediums, especially those often overlooked by cable
+      rating companies.
+
+      The stack is Ruby on Rails, Sinatra, Resque, [C], [ZeroMQ], [Backbone.js]. Running in
+      a [Linode] supported by [CloudFront] managed with Chef and Capistrano.
+
+      **Watched.it is actively seeking investment, mentors and assistance to make my dream
+      become a reality, if you are interested in working with me, investing and believing in me,
+      and helping to make my project enter the mainstream, please [contact me].**
+
+      [last.fm]:     http://last.fm/
+      [scrobbling]:  http://www.last.fm/help/faq?category=Scrobbling
+      [Watched.it]:  http://watched.it/
+
+      [CloudFront]:  http://aws.amazon.com/cloudfront/
+      [Linode]:      http://www.linode.com
+      [Backbone.js]: http://documentcloud.github.com/backbone/
+      [ZeroMQ]:      http://www.zeromq.org/
+      [C]:           http://en.wikipedia.org/wiki/K%26R_C#KRC
+
+      [contact me]:  mailto:lee.hambley@gmail.com
+

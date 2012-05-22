@@ -1,0 +1,128 @@
+!!! 5
+%html
+  %head
+
+    %meta(charset="utf-8")
+
+    %meta(name="description" content="Software engineer, entrepreneur, freelancer and open source contributor")
+    %meta(name="author" content="lee hambley, lee.hambley@gmail.com")
+
+    / Always force latest IE rendering engine (even in intranet) & Chrome Frame
+    %meta(content="IE=edge,chrome=1" http-equiv="X-UA-Compatible")
+
+    /[if lt IE 9]
+      %script(src="http://html5shim.googlecode.com/svn/trunk/html5.js")
+
+    = stylesheet_link_tag "bootstrap.css"
+    = stylesheet_link_tag "style.css"
+    = stylesheet_link_tag "print.css", media: 'print'
+
+    = yield_content :head
+
+  %body{class: page_classes}
+
+    #main(role="main")
+
+      .container
+
+        .row
+          .span8
+
+            .thumbnail.span3
+              = image_tag 'me.png', alt: ''
+
+            .hero-unit.span4
+              %h1 Lee Hambley
+              %h3 Freelancer, Consultant, Engineer
+              %p
+                %i.icon-map-marker
+                Hamburg, Germany
+
+            .page-header
+
+            :markdown
+              I'm a freelance programmer with extensive experience with
+              Ruby, PHP, Lua, and SQL (MySQL and PostgreSQL). Sometimes I
+              work with JavaScript, C or Objective-C. I [contribute] heavily
+              to open source.
+
+              I've maintained [Capistrano] for the last four years; it's
+              the de-facto standard for deploying Ruby or Rails applications. I'm
+              working hard with a couple of [awesome people] at making
+              it work well for other projects too, you can [watch us work].
+
+              You can hear it in [my accent when I talk], I'm an Englishman
+              in <strike>New York</strike> Hamburg.
+
+              I like working with [Rails], [Sinatra], JSON, [Javascript],
+              [Backbone.js], [MiniTest], [Chef], [Sinon.js], [Elastic Search]
+              Chrome, [Pragmata Pro], [Vim], [iTerm2], [Pinboard.in] on my Mac.
+
+              **You can hire me to work with you if you think I'd be a valuable addition or lead for your project.**
+
+              You may also be interested in the work of some good friends of mine, [Ralph von der Hayden], or the inexorable
+              [Hendrik Mans].
+
+              [my accent when I talk]: http://open.spotify.com/track/1yrNoXJopuBtsL5Vj62ESi
+
+              [Hendrik Mans]:         http://hmans.de/
+              [Ralph von der Hayden]: http://rvdh.de/
+
+              [Capistrano]:     http://www.capistranorb.com/
+              [contribute]:     https://github.com/leehambley
+              [awesome people]: https://github.com/deployrb/deploy/graphs/contributors
+              [watch us work]:  https://github.com/deployrb/deploy/
+
+              [Rails]:          http://www.rubyonrails.org/
+              [Sinatra]:        http://www.sinatrarb.com/
+              [Javascript]:     http://shop.oreilly.com/product/9780596517748.do
+              [Backbone.js]:    http://documentcloud.github.com/backbone/
+              [MiniTest]:       https://github.com/seattlerb/minitest
+              [Chef]:           http://www.opscode.com/chef/
+              [Elastic Search]: http://www.elasticsearch.org/
+              [Sinon.js]:       http://sinonjs.org/
+              [Pragmata Pro]:   http://www.fsd.it/fonts/pragmatapro.htm
+              [Vim]:            https://peepcode.com/products/smash-into-vim-i
+              [iTerm2]:         http://www.iterm2.com/
+              [Pinboard.in]:    http://pinboard.in/
+
+            .row
+              .span8
+                - if is_blog_article?
+                  .page-header
+                    %h1= current_article_title
+                = yield
+
+          .span4
+            .contact
+              %h2 Contact
+              %p
+                %i.icon-file
+                = link_to 'About Me', '/'
+              %p
+                %i.icon-envelope
+                = link_to 'lee.hambley@gmail.com', 'mailto:lee.hambley@gmail.com'
+              %p
+                %i.icon-signal
+                +40 (0) 170 298 5667
+              %p
+                %i.icon-octocat
+                = link_to 'https://github.com/leehambley', 'https://github.com/leehambley'
+
+            .blog-titles
+              %h2 Recent Articles
+              %ul
+                - data.blog.articles[0...5].each do |article|
+                  %li
+                    = article.date
+                    = link_to article.title, article.url
+
+            .blog-tags
+              %h2 Blog Tags
+              %ul
+                - blog_tags.each do |tag|
+                  %li= tag
+
+    %script(src="javascripts/jquery.js")
+    %script(src="javascripts/bootstrap.js")
+    %script(src="javascripts/scripts.js")

@@ -1,0 +1,13 @@
+.container {padding: 20px 0 0 0}
+.hero-unit{background: #FFF;padding: 0}
+.page-header{clear: both; }
+.carousel-inner img{height: 300px; width: 100%}
+#printBtn,#downBtn{width: 100%;margin: 10px 0 0 0 }
+footer{text-align: center}
+
+.icon-octocat {
+  width: 16px;
+  height: 16px;
+  background-image: url(../img/octocat.png);
+  background-position: 0 0;
+}
