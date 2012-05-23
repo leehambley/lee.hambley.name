@@ -1,5 +1,5 @@
 ---
-title: "FriendlyId And Parallel Pprocesses"
+title: "FriendlyId And Parallel Processes"
 date: 2012/02/27
 tags: ruby, rails, redis
 ---

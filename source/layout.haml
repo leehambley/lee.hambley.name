@@ -17,6 +17,11 @@
     = stylesheet_link_tag "style.css"
     = stylesheet_link_tag "print.css", media: 'print'
 
+    - if is_blog_article?
+      %title
+        = current_article_title
+        Lee Hambley
+
     = yield_content :head
 
   %body{class: page_classes}
@@ -83,7 +88,9 @@
                 [Pinboard.in]:    http://pinboard.in/
 
             :markdown
-              **You can hire me to work with you if you think I'd be a valuable addition or lead for your project.**
+              **You can [hire me] to work with you if you think I'd be a valuable addition or lead for your project.**
+
+              [hire me]: /hire_me.html
 
             - unless is_blog_article?
               .noPrint
@@ -112,12 +119,12 @@
                 = link_to 'lee.hambley@gmail.com', 'mailto:lee.hambley@gmail.com'
               %p
                 %i.icon-signal
-                +40 (0) 170 298 5667
+                +49 (0) 170 298 5667
               %p
                 %i.icon-octocat
                 = link_to 'https://github.com/leehambley', 'https://github.com/leehambley'
 
-            .blog-titles
+            .blog-titles.noPrint
               %h2 Recent Articles
               %ul.blog-titles
                 - data.blog.articles.sort { |a,b| b.date <=> a.date }[0...10].each do |article|
@@ -125,9 +132,19 @@
                     %span.article-date= article.date
                     = link_to article.title, article.url
 
-    %script(src="javascripts/jquery.js")
-    %script(src="javascripts/bootstrap.js")
-    %script(src="javascripts/scripts.js")
+        .row.noPrint
+          .span12
+            .page-header
+            :markdown
+              This work is licensed under a [Creative Commons Attribution 3.0 Unported License].
+
+              Licences for my individual projects, and mini-code snippets can be found witin.
+
+              [Creative Commons Attribution 3.0 Unported License]: http://creativecommons.org/licenses/by/3.0/
+
+    %script(src="/javascripts/jquery.js")
+    %script(src="/javascripts/bootstrap.js")
+    %script(src="/javascripts/scripts.js")
 
     :javascript
       var _gaq = _gaq || [];
