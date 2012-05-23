@@ -1,5 +1,5 @@
 ---
-title: "`friendly_id` and parallel processes"
+title: "FriendlyId And Parallel Pprocesses"
 date: 2012/02/27
 tags: ruby, rails, redis
 ---
@@ -22,15 +22,13 @@ If one tries to create another entry with the same `name` attribute at any other
 
 The race condition happens when two processes (people, threads, processes, import tasks, whatever) try to create an entry with the same name, at the same moment. Here's what they both do, assuming the following existing data:
 
-~~~ text
-# Things table structure
-id | title      | slug
----+------------+------------
- 1 | Test Title | test-title-1
- 2 | Test Title | test-title-2
- 3 | Test Title | test-title-3
- 4 | Test Title | test-title-4
-~~~
+    # Things table structure
+    id | title      | slug
+    ---+------------+------------
+     1 | Test Title | test-title-1
+     2 | Test Title | test-title-2
+     3 | Test Title | test-title-3
+     4 | Test Title | test-title-4
 
 1. Both processes will look at the data.
    **Both processes will find 4 records.**
@@ -38,7 +36,7 @@ id | title      | slug
    **Both processes will find `test-title-4`.**
 3. Both processes will break off the existing `--{n}`
    **Both processes will assume the *slug sequence* is currently at `4`.**
-4. *(Both processes will be **right**)*
+4. *Both processes will be <strong>correct</strong>*
 5. Both processes will increment `n` number, to get the next number in the sequence.
 6. Both proceses, assuming they have generated a safe slug, will save the new record with the (invalid) slug `test-title-5`.
 7. **One of the processes will fail, because the database's `UNIQUE` constraint will be violated.**
@@ -85,15 +83,11 @@ As a counterpoint to *#2*, Redis is capable of storing *ver* large numbers. The 
 
 The integration tests exist in my own application which recreate the race, appears to be happy with this implementation, but it can surely be improved. There are some trivial unit tests in the Gist (linked below).. you can run these by ensuring you have `redis` and `minitest` installed, are running on `Ruby 1.9x`, and have started a redis-server with at least 10 databases (16 is the default) running on the default port (`6379`). Then simply invoke the tests from the command line:
 
-~~~ sh
-$ ruby ./the-contents-of-the-gist.rb
-~~~
+    $ ruby ./the-contents-of-the-gist.rb
 
 Or, if you really want to make sure it's tortured:
 
-~~~ sh
-$ for i in {1..100}; do; ruby ./the-contents-of-the-gist.rb; done
-~~~
+    $ for i in {1..100}; do; ruby ./the-contents-of-the-gist.rb; done
 
 ## Can I use this?
 
@@ -103,34 +97,32 @@ Yes, if you can use MIT licensed software (see below), and your `Rails.applicati
 
 You can of course modify my code to rake Redis from somewhere else, make it's own connection, or whatever you want, really.
 
-~~~ ruby
-module ApplicationWideRedis
+    module ApplicationWideRedis
 
-  extend ActiveSupport::Concern
+      extend ActiveSupport::Concern
 
-  module ClassMethods
-    def redis
-       @redis ||= begin
-        # You could also use Redis, without namespace here
-        Redis::Namespace.new("my-app", :redis => Redis.new)
+      module ClassMethods
+        def redis
+           @redis ||= begin
+            # You could also use Redis, without namespace here
+            Redis::Namespace.new("my-app", :redis => Redis.new)
+          end
+        end
       end
+
+      def redis
+        self.class.redis
+      end
+
     end
-  end
 
-  def redis
-    self.class.redis
-  end
-
-end
-
-Rails.application.class.send(:include, ApplicationWideRedis)
-~~~
+    Rails.application.class.send(:include, ApplicationWideRedis)
 
 ## Show me the code...
 
 Improvements, suggestions, etc - send them all the Gist, comments, forks, changes, anything:
 
-* https://gist.github.com/c014dfcc24f80f803621
+* <https://gist.github.com/c014dfcc24f80f803621>
 
 ## What other solutions might exist?
 
@@ -138,8 +130,8 @@ Plenty, actually - but mostly Redis solves this quite beautifully, and as I said
 
 For some more discussion please see the issues/pull requests at Github /FriendlyId where I (`leehambley`) was involved in the discussion:
 
-* https://github.com/norman/friendly_id/issues/243
-* https://github.com/norman/friendly_id/issues/200
+* <https://github.com/norman/friendly_id/issues/243>
+* <https://github.com/norman/friendly_id/issues/200>
 
 ## Are you Crazy?
 
@@ -149,25 +141,23 @@ Norman Clarke, the `friendly_id` author said that using Redis for something that
 
 This code is released under the [MIT License](http://en.wikipedia.org/wiki/MIT_License):
 
-~~~
-Copyright (C) 2012 Lee Hambley <lee.hambley@gmail.com>
+    Copyright (C) 2012 Lee Hambley <lee.hambley@gmail.com>
 
-Permission is hereby granted, free of charge, to any person obtaining a
-copy of this software and associated documentation files (the
-"Software"), to deal in the Software without restriction, including
-without limitation the rights to use, copy, modify, merge, publish,
-distribute, sublicense, and/or sell copies of the Software, and to permit
-persons to whom the Software is furnished to do so, subject to the
-following conditions:
+    Permission is hereby granted, free of charge, to any person obtaining a
+    copy of this software and associated documentation files (the
+    "Software"), to deal in the Software without restriction, including
+    without limitation the rights to use, copy, modify, merge, publish,
+    distribute, sublicense, and/or sell copies of the Software, and to permit
+    persons to whom the Software is furnished to do so, subject to the
+    following conditions:
 
-The above copyright notice and this permission notice shall be included
-in all copies or substantial portions of the Software.
+    The above copyright notice and this permission notice shall be included
+    in all copies or substantial portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
-NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
-OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
-USE OR OTHER DEALINGS IN THE SOFTWARE.
-~~~
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+    OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+    NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+    DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+    OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+    USE OR OTHER DEALINGS IN THE SOFTWARE.

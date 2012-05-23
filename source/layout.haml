@@ -51,40 +51,48 @@
               working hard with a couple of [awesome people] at making
               it work well for other projects too, you can [watch us work].
 
-              You can hear it in [my accent when I talk], I'm an Englishman
-              in <strike>New York</strike> Hamburg.
-
-              I like working with [Rails], [Sinatra], JSON, [Javascript],
-              [Backbone.js], [MiniTest], [Chef], [Sinon.js], [Elastic Search]
-              Chrome, [Pragmata Pro], [Vim], [iTerm2], [Pinboard.in] on my Mac.
-
-              **You can hire me to work with you if you think I'd be a valuable addition or lead for your project.**
-
-              You may also be interested in the work of some good friends of mine, [Ralph von der Hayden], or the inexorable
-              [Hendrik Mans].
-
-              [my accent when I talk]: http://open.spotify.com/track/1yrNoXJopuBtsL5Vj62ESi
-
-              [Hendrik Mans]:         http://hmans.de/
-              [Ralph von der Hayden]: http://rvdh.de/
-
               [Capistrano]:     http://www.capistranorb.com/
               [contribute]:     https://github.com/leehambley
               [awesome people]: https://github.com/deployrb/deploy/graphs/contributors
               [watch us work]:  https://github.com/deployrb/deploy/
 
-              [Rails]:          http://www.rubyonrails.org/
-              [Sinatra]:        http://www.sinatrarb.com/
-              [Javascript]:     http://shop.oreilly.com/product/9780596517748.do
-              [Backbone.js]:    http://documentcloud.github.com/backbone/
-              [MiniTest]:       https://github.com/seattlerb/minitest
-              [Chef]:           http://www.opscode.com/chef/
-              [Elastic Search]: http://www.elasticsearch.org/
-              [Sinon.js]:       http://sinonjs.org/
-              [Pragmata Pro]:   http://www.fsd.it/fonts/pragmatapro.htm
-              [Vim]:            https://peepcode.com/products/smash-into-vim-i
-              [iTerm2]:         http://www.iterm2.com/
-              [Pinboard.in]:    http://pinboard.in/
+            - unless is_blog_article?
+              .noPrint
+                :markdown
+                  You can hear it in [my accent when I talk], I'm an Englishman
+                  in <strike>New York</strike> Hamburg.
+                  [my accent when I talk]: http://open.spotify.com/track/1yrNoXJopuBtsL5Vj62ESi
+
+            - unless is_blog_article?
+              :markdown
+                I like working with [Rails], [Sinatra], JSON, [Javascript],
+                [Backbone.js], [MiniTest], [Chef], [Sinon.js], [Elastic Search]
+                Chrome, [Pragmata Pro], [Vim], [iTerm2], [Pinboard.in] on my Mac.
+
+                [Rails]:          http://www.rubyonrails.org/
+                [Sinatra]:        http://www.sinatrarb.com/
+                [Javascript]:     http://shop.oreilly.com/product/9780596517748.do
+                [Backbone.js]:    http://documentcloud.github.com/backbone/
+                [MiniTest]:       https://github.com/seattlerb/minitest
+                [Chef]:           http://www.opscode.com/chef/
+                [Elastic Search]: http://www.elasticsearch.org/
+                [Sinon.js]:       http://sinonjs.org/
+                [Pragmata Pro]:   http://www.fsd.it/fonts/pragmatapro.htm
+                [Vim]:            https://peepcode.com/products/smash-into-vim-i
+                [iTerm2]:         http://www.iterm2.com/
+                [Pinboard.in]:    http://pinboard.in/
+
+            :markdown
+              **You can hire me to work with you if you think I'd be a valuable addition or lead for your project.**
+
+            - unless is_blog_article?
+              .noPrint
+                :markdown
+                  You may also be interested in the work of some good friends of mine, [Ralph von der Hayden], or the inexorable
+                  [Hendrik Mans].
+
+                  [Hendrik Mans]:         http://hmans.de/
+                  [Ralph von der Hayden]: http://rvdh.de/
 
             .row
               .span8
@@ -111,18 +119,39 @@
 
             .blog-titles
               %h2 Recent Articles
-              %ul
-                - data.blog.articles[0...5].each do |article|
+              %ul.blog-titles
+                - data.blog.articles.sort { |a,b| b.date <=> a.date }[0...10].each do |article|
                   %li
-                    = article.date
+                    %span.article-date= article.date
                     = link_to article.title, article.url
-
-            .blog-tags
-              %h2 Blog Tags
-              %ul
-                - blog_tags.each do |tag|
-                  %li= tag
 
     %script(src="javascripts/jquery.js")
     %script(src="javascripts/bootstrap.js")
     %script(src="javascripts/scripts.js")
+
+    :javascript
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-236608-6']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+         ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    :javascript
+      $(function(){
+
+        $.expr[':'].external = function(obj) {
+          return !obj.href.match(/^mailto:/) &&
+          (obj.hostname.replace(/^www\./i, '') != document.location.hostname.replace(/^www\./i, ''));
+        };
+
+        $('a:external').on('click', function (click_event) {
+          var tracker = _gat._getTracker('UA-236608-6')
+          tracker._trackPageview('/outgoing/'+ $(this).attr('href'));
+        });
+
+      });
+
