@@ -5,6 +5,10 @@
 #printBtn,#downBtn{width: 100%;margin: 10px 0 0 0 }
 footer{text-align: center}
 
+span.strike {
+  text-decoration: line-through;
+}
+
 pre code {
   color: inherit;
   border: none;
