@@ -22,7 +22,7 @@ The time doesn't seem to "go" anywhere, `time curl` reportings something like
 And the browsers hang for 20+ seconds doing almost nothing. The corresponding
 Rails log line for this request was (I'm using [Foreman]):
 
-    10:38:13 web.1          | Completed 200 OK in 429ms (Views: 200.7ms | ActiveRecord: 15.4ms)
+    10:38:13 web.1 | Completed 200 OK in 429ms (Views: 200.7ms | ActiveRecord: 15.4ms)
 
 I stumbled across a [suggestion related to Windows 7] running with IPv6
 enabled (which is still not the default, as far as I am aware) can cause this,
@@ -34,7 +34,7 @@ see that I had anything to lose by adding another couple of lines to my hosts
 file, now that it looks like this:
 
     127.0.0.1 example.com.local
-    ::1 example.com.local
+    ::1       example.com.local
 
 It looks like if you are a Firefox user it might be possible to [disable
 IPv6] in Firefox ([also poissible with Chrome]) , but frankly in 2012 this isn't a wise thing to 
