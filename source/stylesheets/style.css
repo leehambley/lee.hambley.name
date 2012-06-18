@@ -29,3 +29,8 @@ ul.blog-titles .article-date {
   background-image: url(../img/octocat.png);
   background-position: 0 0;
 }
+
+p {
+  font-size: 14px;
+  line-height: 16px;
+}
