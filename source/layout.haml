@@ -127,7 +127,8 @@
                 - data.blog.articles.sort { |a,b| b.date <=> a.date }[0...10].each do |article|
                   %li
                     %span.article-date= article.date
-                    = link_to article.title, article.url
+                    %br
+                    .article-link= link_to article.title, article.url
 
         .row.noPrint
           .span12

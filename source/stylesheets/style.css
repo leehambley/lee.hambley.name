@@ -23,6 +23,10 @@ ul.blog-titles .article-date {
   color: #CCC;
 }
 
+ul.blog-titles .article-link {
+  padding-left: 1em;
+}
+
 .icon-octocat {
   width: 16px;
   height: 16px;
@@ -32,5 +36,5 @@ ul.blog-titles .article-date {
 
 p {
   font-size: 14px;
-  line-height: 16px;
+  line-height: 18px;
 }
