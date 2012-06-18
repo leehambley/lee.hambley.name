@@ -221,7 +221,7 @@ months, and who had the first thought to invite me. Sergey I want thank you
 for the great work we did together, and the invitation to your beautiful home
 country.
 
-*Full Disclosure**: Altoros hosted my visit to Belarus, they paid for my
+*Full Disclosure*: Altoros hosted my visit to Belarus, they paid for my
 flights, Visa and my hotel, their staff spent the weekend helping me get
 around, and seeing the city. They didn't pay me to advocate their company, but
 I absolutely do so. I don't work for Altoros, but I think I'd really enjoy
