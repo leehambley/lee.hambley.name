@@ -19,7 +19,7 @@ presentation, utility buildings and a small island all set around a lake in
 the middle of the forest.
 
 I've never had the pleasure of giving a talk whilst bluetits tend to their
-young meters from my stage, and dragonflies, toads and other wildlife buss and
+young meters from my stage, and dragonflies, toads and other wildlife buzz and
 hop around mere meters from you.
 
 The conference was organized by [Altoros][3], one of Belarus' larger software
