@@ -85,7 +85,7 @@ To go through it line by line,
 4. Return from the Fiber block with the value of `y`, on the first
     run this sends `1` (`y`) as the return value of `fib.resume`,
     so we effectively `puts 1` on line #8.
-5. Calculate the next values, this is standard [Fobonacci stuff].
+5. Calculate the next values, this is standard [Fibonacci stuff].
 6. (Nothing)
 7. (Nothing)
 8. Call the fiber 2,000 times, the fiber remembers the values of `x` and `y`
