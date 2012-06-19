@@ -90,6 +90,9 @@ To go through it line by line,
 7. (Nothing)
 8. Call the fiber 2,000 times, the fiber remembers the values of `x` and `y`
     between calls, and will begin from line #4 on all calls except the first.
+    because of the infinite loop, control will return to line #4 which will
+    exit the fiber, returning the latest number in the sequence to the caller
+    on this line.
 
 [Fern]:             http://www.rubygems.org/search?query=fern
 [Fibonacci Stuff]:  http://en.wikipedia.org/wiki/Fibonacci_number
