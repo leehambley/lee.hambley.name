@@ -11,7 +11,7 @@ Open Air][1].
 ### Unconference
 
 The format of an un-conference is inspiring, it's more BBQ-get-away than
-a serious sutffy conference in a hotel conference suite; 60 km (38 miles)
+a serious stuffy conference in a hotel conference suite; 60 km (38 miles)
 from Minsk the conference was held at one of Belarus' many [Agritourism][2]
 facilities; a privately owned complex covering not more than an acre or
 two, featuring beautiful wooden bulidings, a covered area for giving the
@@ -20,7 +20,7 @@ the middle of the forest.
 
 I've never had the pleasure of giving a talk whilst bluetits tend to their
 young meters from my stage, and dragonflies, toads and other wildlife buzz and
-hop around mere meters from you.
+hop around mere meters away.
 
 The conference was organized by [Altoros][3], one of Belarus' larger software
 companies; they are very active in open-source, and very interested in
@@ -55,7 +55,7 @@ one US dollar is about 8,200Br ([Belarusian Ruble][4]) (€1 ≈ 10,350Br).
 surprised upon arriving in a country; but it must be, because I was.*
 
 To be clear, beyond any shadow of doubt, Belarus is one of the most
-interesting, humbling and inspiring places I have been fortunate enoguh to
+interesting, humbling and inspiring places I have been fortunate enough to
 visit; I would recommend that as many people as possible do go there.
 
 Obtaining a VISA is not difficult, but it is rather expensive, some €60 ($75
@@ -217,7 +217,7 @@ the hotel when I missed the Bus from being too encrossed in conversation with yo
 to even notice that everybody had left!
 
 My final thanks goes to Sergey Avseyev with whom I worked for a number of
-months, and who had the first thought to invite me. Sergey I want thank you
+months, and who had the first thought to invite me. Sergey I want to thank you
 for the great work we did together, and the invitation to your beautiful home
 country.
 
