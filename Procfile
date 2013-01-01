@@ -1,1 +1,1 @@
-web: bundle exec middleman server -p $PORT
+web: bundle exec middleman server -p $PORT --disable-watcher
