@@ -1,1 +1,1 @@
-web: bundle exec middleman build && thin start -p $PORT
+web: bundle exec middleman build --verbose && thin start -p $PORT
