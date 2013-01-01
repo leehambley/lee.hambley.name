@@ -1,7 +1,7 @@
 ---
 title: "FriendlyId And Parallel Processes"
-date: 2012/02/27
 tags: ruby, rails, redis
+
 ---
 
 I've been using `friendly_id4` for a while now and noticed that it doesn't have a guard to ensure that processes to not race to generate the *next* slug when collisions occur.

@@ -1,6 +1,6 @@
 ---
 title: "The Enemy Team"
-date: 2012/01/04
+
 ---
 
 ![I feel like the only sane person on PSN](http://25.media.tumblr.com/tumblr_lx439k2IP91r9t8ybo1_500.png)

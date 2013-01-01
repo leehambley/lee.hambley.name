@@ -16,7 +16,7 @@
 
     - if is_blog_article?
       %title
-        = current_article_title
+        = current_article.title
         Lee Hambley
 
     = yield_content :head
@@ -102,7 +102,7 @@
               .span8
                 - if is_blog_article?
                   .page-header
-                    %h1= current_article_title
+                    %h1= current_article.title
                 = yield
 
           .span4
@@ -124,9 +124,9 @@
             .blog-titles.noPrint
               %h2 Recent Articles
               %ul.blog-titles
-                - data.blog.articles.sort { |a,b| b.date <=> a.date }[0...10].each do |article|
+                - blog.articles.each do |article|
                   %li
-                    %span.article-date= article.date
+                    %span.article-date= article.date.strftime('%b %e %Y')
                     %br
                     .article-link= link_to article.title, article.url
 

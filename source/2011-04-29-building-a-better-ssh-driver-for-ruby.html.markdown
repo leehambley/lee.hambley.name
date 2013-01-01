@@ -1,6 +1,6 @@
 ---
 title: "Building a better SSH driver for Ruby"
-date: 2011/04/29
+
 ---
 
 I’ve been maintaining Capistrano for a long time now, and most of the

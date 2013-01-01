@@ -1,6 +1,5 @@
 ---
 title: Rediscovering Hacking
-date: 2011/01/14
 
 ---
 

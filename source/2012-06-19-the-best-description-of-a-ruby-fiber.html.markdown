@@ -1,6 +1,5 @@
 ---
 title: "The best description of a ruby fiber"
-date: 2012/06/19
 
 ---
 

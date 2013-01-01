@@ -1,6 +1,5 @@
 ---
 title: "Ruby Open Air, an unconference in Minsk Belarus"
-date: 2012/06/19
 
 ---
 

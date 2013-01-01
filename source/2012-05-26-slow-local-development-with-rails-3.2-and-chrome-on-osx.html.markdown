@@ -1,9 +1,8 @@
 ---
 title: Slow Local Development with Rails 3.2 and Chrome on Mac OS X
-date:  2012-05-26
 
 ---
-I've been seeing load times of 35+ seconds on OSX whilst using Chrome, and a local 
+I've been seeing load times of 35+ seconds on OSX whilst using Chrome, and a local
 development host using Rails on the latest Ruby (*1.9.3-p194*), with or without the [falcon
 patches], and to a lesser degree the same with Safari and Firefox.
 
@@ -29,7 +28,7 @@ enabled (which is still not the default, as far as I am aware) can cause this,
 as althoguh the host is available via IPv4, the system still attempts to
 resolve the host over IPv6 first (it would appear)
 
-Althoguh the suggestion was targeted at Windows 7, I had [tried] everything [else] and didn't 
+Althoguh the suggestion was targeted at Windows 7, I had [tried] everything [else] and didn't
 see that I had anything to lose by adding another couple of lines to my hosts
 file, now that it looks like this:
 
@@ -37,8 +36,8 @@ file, now that it looks like this:
     ::1       example.com.local
 
 It looks like if you are a Firefox user it might be possible to [disable
-IPv6] in Firefox ([also poissible with Chrome]) , but frankly in 2012 this isn't a wise thing to 
-do, as the alternative (adding 1 line to your hosts file) is much wiser, and IPv6 isn't going 
+IPv6] in Firefox ([also poissible with Chrome]) , but frankly in 2012 this isn't a wise thing to
+do, as the alternative (adding 1 line to your hosts file) is much wiser, and IPv6 isn't going
 away, even if it isn't changing the world quite yet.
 
 After making this change the resulting timed curl line looks like this:

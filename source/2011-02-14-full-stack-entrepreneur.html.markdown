@@ -1,6 +1,5 @@
 ---
 title: "Full-Stack Entrepreneur"
-date: 2011/02/14
 
 ---
 
