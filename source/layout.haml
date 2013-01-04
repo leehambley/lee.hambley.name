@@ -6,6 +6,7 @@
 
     %meta(name="description" content="Software engineer, entrepreneur, freelancer and open source contributor")
     %meta(name="author" content="lee hambley, lee.hambley@gmail.com")
+    %link(rel="alternate" type="application/rss+xml" href="/feed.xml")
 
     /[if lt IE 9]
       %script(src="http://html5shim.googlecode.com/svn/trunk/html5.js")
@@ -114,6 +115,9 @@
               %p
                 %i.icon-envelope
                 = link_to 'lee.hambley@gmail.com', 'mailto:lee.hambley@gmail.com'
+              %p
+                %i.icon-star-empty
+                = link_to 'RSS Feed', '/feed.xml'
               %p
                 %i.icon-signal
                 +49 (0) 170 298 5667

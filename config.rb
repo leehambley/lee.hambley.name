@@ -13,6 +13,11 @@ set :blog_layout_engine, 'haml'
 set :markdown, layout_engine: :haml
 
 ###
+# Blog Feed
+###
+page "/feed.xml", :layout => false
+
+###
 # GitHib flavoured Markdown, I can't go back!
 ###
 set :markdown_engine, :redcarpet

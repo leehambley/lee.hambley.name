@@ -7,6 +7,7 @@ gem "rb-fsevent"
 gem "haml"
 gem "redcarpet"
 gem "maruku"
+gem "builder"
 
 gem "execjs"
 gem "therubyracer"
