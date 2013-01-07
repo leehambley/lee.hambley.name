@@ -2,8 +2,8 @@
 title: Processing a streaming API with Ruby sockets without Net::HTTP
 
 ---
-I recently ran across the use-case of needing to consume the [couchdb changes
-stream][couchdb_changes] in a streaming fashion.
+I recently ran across the use-case of needing to consume the [CouchDB `_changes`
+stream](http://guide.couchdb.org/draft/notifications.html#continuous) in a streaming fashion.
 
 Most of the recommendations I found online were singing the praises of
 EventMachine or some other event-driven solution, but in fact, it's much
@@ -64,6 +64,3 @@ is finished than passing a `NilClass`, curiously in Ruby there's no way to
 to cause the thread to break out. In the *Go* language, queues are called
 *channels* and they can be `closed()`, signalling anyone who is reading the
 channel that there's nothing else to read, and never will be.
-
---
-couchdb_changes:
