@@ -1,6 +1,5 @@
 ---
 title: GNU Make, still great for workflow control
-published: false
 
 ---
 You might think that GNU's *Make* is a tool for unix beards to compile the C
