@@ -22,7 +22,7 @@ If one tries to create another entry with the same `name` attribute at any other
 
 The race condition happens when two processes (people, threads, processes, import tasks, whatever) try to create an entry with the same name, at the same moment. Here's what they both do, assuming the following existing data:
 
-    # Things table structure
+    # Things table structure
     id | title      | slug
     ---+------------+------------
      1 | Test Title | test-title-1
