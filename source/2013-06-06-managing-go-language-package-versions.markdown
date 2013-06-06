@@ -18,7 +18,7 @@ The import statement doesn't have enough information to version resources, here'
     	"os"
     	"time"
     )
-    
+
 Here the `amqp` package is just begging to be broken incase that a newer version is shipped, or broken release is shipped.
 
 There's no way to specify this as a tag, or branch, it's simply the `HEAD` reference. There's a subtlety here that means if there's a branch who's name matches your current Go version, that'll be taken.
@@ -42,3 +42,8 @@ The key thing here is that the `GOPATH` is always set to the local directory, an
 In this mechanism, the three most common Go commands that I ever use are aliased to `make run`, `make build` and `make get`, although this is called as a dependency of the other targets.
 
 I check the entire directory in, I really believe that since Go ships as as static binary, it's wise to take the (small, 948K in this case) overhead of checking the `amqp` in to our own repository, effectively *vendoring* my dependencies.
+
+To quote the go core team "shipping your binaries to production shouldn't
+involve pulling down some random dude's stuff from Github.", watch the segment
+from Google I/O 2013 here:
+[[http://www.youtube.com/watch?v=p9VUCp98ay4&feature=player_detailpage#t=2195s]]
