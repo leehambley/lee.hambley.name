@@ -1,6 +1,6 @@
 ---
 title: "Using Capistrano v3 With Chef"
-date: 2013-06-15
+date: 2013-06-11
 ---
 
 We've been working really hard to push Capistrano v3, after years of
