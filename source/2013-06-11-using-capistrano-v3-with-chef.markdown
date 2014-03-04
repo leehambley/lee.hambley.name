@@ -33,7 +33,7 @@ dependencies of tasks, so we can do something like:
       task :'upload-host-config' do
         on roles(:all) do |host|
           template_path = File.expand_path('chef-solo.rb.erb')
-          host_config   = ERB.new(File.new(template_path).read).result(host)
+          host_config   = ERB.new(File.new(template_path).read).result(binding)
           upload! StringIO.new(host_config), '/tmp/chef-solo.rb'
         end
       end
