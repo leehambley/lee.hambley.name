@@ -21,7 +21,8 @@ The Parallel helper, not shown here is implemented using Threads, simple,
 almost-real concurrency should be good enoguh for me in this context, the
 performance of the host machine is unlikely to be the bottleneck in a remote
 SSH command library, that said I've been wanting to learn more about using
-Fibers for a long time and today happened upon [this article][1]:
+Fibers for a long time and today happened upon an article that has unfortunately 
+disappeared from the internet:
 
 > Execution of blocks and methods always begins from their first statement.
 > Each time, their local variables are initialised anew. If they need to
@@ -95,4 +96,3 @@ To go through it line by line,
 
 [Fern]:             http://www.rubygems.org/search?query=fern
 [Fibonacci Stuff]:  http://en.wikipedia.org/wiki/Fibonacci_number
-[1]:                http://ruby.runpaint.org/concurrency
