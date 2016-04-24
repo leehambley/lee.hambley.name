@@ -3,6 +3,8 @@ title: "Seven Years Under A Palm Tree"
 date: 2016-04-24
 ---
 
+![Our old logo, so easy you can be on the beach!](/img/2016-04-24-seven-years/capistrano-logo-big.png)
+
 The last time I wrote on this blog was June 2013 as I geared up to launch
 Capistrano v3 which was a complete ground-up rewrite. The rewrite had been
 "finished" and working for a while, but given that it was a ground-up rewrite
@@ -46,29 +48,40 @@ rewrite, it's inarguably better looking, more concise and easier to pick the
 important information out of, but people can be resistant to change, so it's
 super easy to set back to the previous `pretty` formatter!
 
-Another important part of the 3.5 release is the integration with
-[Harrow.io][1]. Harrow is platform/service/company that I founded with some
+**Another important part of the 3.5 release is the integration with
+[Harrow.io][1].** Harrow is platform, service and company that I founded with some
 friends to make my work on Capistrano more sustainable by making it into my day
 job. We built something that you can understand as being a "Continuous
 Integration" tool but with a really distinctly different design to anything
-else you migth have come across. It's designed to feel like a web-enabled
-extension of Capistrano's principles. With stages, and sets of environment
-variables, designed to make the tooling it wraps better, faster, and easier to
-use. Like most things I've thought about doing with Capistrano over the years,
-not least rewriting it from scratch, the decision to promote Harrow from within
+else you migth have come across.
+
+It's designed to feel like *a web-enabled extension of Capistrano's principles*.
+With stages, and sets of environment variables, designed to make the tooling it
+wraps better, faster, and easier to use.
+
+Like most things I've contemplated doing with Capistrano over the years, not
+least rewriting it from scratch, the decision to promote Harrow from within
 Capistrano was not taken lightly, it's important to strike the right balance
 between offering people a better experience with their software, without
 forcing them into something they might come to resent.
 
-The current scope of the Capistrano+Harrow integration is a simple in-terminal
-prompt (well behaved, presuming "no" if no answer is given within a few seconds
-or no facility to prompt is available) when running `$ cap install` which
-happens once and only once per project. We may expand the scope of this
-integration in the medium-term future depending on the community feedback.
+The scope of the Capistrano/Harrow integration is a simple in-terminal prompt
+(well behaved, presuming "no" if no answer is given within a few seconds or no
+facility to prompt is available) when running `$ cap install` which happens
+once and only once per project. We may expand the scope of this integration in
+the medium-term future depending on the community feedback. The integration
+does make one anonymous HTTP request to allow us to toggle things `off` incase
+things go badly, which can be opted out of by simply setting `$ git config ...`
+which will stop the integration doing *anything*. (We designed the integration
+to be *so* discreet that *it doesn't even write a dot-file with
+configuration!*)
 
-Capistrano will always remain open source and [liberally licensed][6]. Harrow
+![A screenshot of the integration](/img/2016-04-24-seven-years/integration-screenshot.png)
+
+**Capistrano will always remain open source and [liberally licensed][6]**. Harrow
 is closed-source (for now) platform with a cloud subscription model, and an
-on-premise "enterprise" version which are offered as paid commercial services.
+on-premise "enterprise" version which are offered as paid commercial services. With that
+said, I'm still curious to see how the community reacts.
 
 ---
 
