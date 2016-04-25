@@ -8,14 +8,14 @@ date: 2016-04-24
 The last time I wrote on this blog was June 2013 as I geared up to launch
 Capistrano v3 which was a complete ground-up rewrite. The rewrite had been
 "finished" and working for a while, but given that it was a ground-up rewrite
-in the spirit of Capistrano, but shared nary a single line of code with it's
-forebear the release dragged up a bunch of mixed emotions, was Tom and I being
+in the spirit of Capistrano, but shared nary a single line of code with its
+forebear, the release dragged up a bunch of mixed emotions, was Tom and I being
 frauds writing new software and releasing it under an existing "brand name", or
 was it a - what right did we have to make that decision in any case?
 
 Today I'm reflecting at the end of a weekend where many things seem to be
 aligning. My son is 18 months old today, my company [Harrow.io][1] (more below)
-will release it's Capistrano integration on Monday, and one of the most
+will release its Capistrano integration on Monday, and one of the most
 significant releases of Capistrano since the rewrite in 2013 will be released.
 
 Serendipitously this also marks seven years to the week since my first commit
@@ -24,9 +24,9 @@ Capistrano I'd spent countless hours working to help people in IRC, and on the
 then infantile StackOverflow (it was less than a year out of beta!), I'd also
 written the tremendously popular `capistrano-handbook` which I finally uploaded
 to Github on the same day that my code landed in Capistrano. I don't recall
-those two miletones being related, apparently it was just a coincidence!
+those two milestones being related, apparently it was just a coincidence!
 
-Capistrano 3.x, as brutally different thought it may have been was incredibly
+Capistrano 3.x, as brutally different though it may have been, was incredibly
 well received, through the rewrite we lost thousands of lines of custom DSL
 code, gained a lot in speed and pluggability and an immeasurable amount in
 *maintainability*. Of course we also quietly dropped some seldom used features
@@ -53,7 +53,7 @@ super easy to set back to the previous `pretty` formatter!
 some friends to make my work on Capistrano more sustainable by making it into
 my day job. We built something that you can understand as being a "Continuous
 Integration" tool but with a really distinctly different design to anything
-else you migth have come across.
+else you might have come across.
 
 It's designed to feel like *a web-enabled extension of Capistrano's principles*.
 With stages, and sets of environment variables, designed to make the tooling it
@@ -70,7 +70,7 @@ The scope of the Capistrano/Harrow integration is a simple in-terminal prompt
 facility to prompt is available) when running `$ cap install` which happens
 once and only once per project. We may expand the scope of this integration in
 the medium-term future depending on the community feedback. The integration
-does make one anonymous HTTP request to allow us to toggle things `off` incase
+does make one anonymous HTTP request to allow us to toggle things `off` in case
 things go badly, which can be opted out of by simply setting `$ git config ...`
 which will stop the integration doing *anything*. (We designed the integration
 to be *so* discreet that *it doesn't even write a dot-file with
