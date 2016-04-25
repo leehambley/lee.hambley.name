@@ -11,7 +11,8 @@ Capistrano v3 which was a complete ground-up rewrite. The rewrite had been
 in the spirit of Capistrano, but shared nary a single line of code with it's
 forebear the release dragged up a bunch of mixed emotions, was Tom and I being
 frauds writing new software and releasing it under an existing "brand name", or
-was it a - what right did we have to make that decision in any case?
+was it a violation of some unwritten Netiquette - what right did we have to
+make that decision in any case?
 
 Today I'm reflecting at the end of a weekend where many things seem to be
 aligning. My son is 18 months old today, my company [Harrow.io][1] (more below)
