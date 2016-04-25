@@ -49,9 +49,9 @@ important information out of, but people can be resistant to change, so it's
 super easy to set back to the previous `pretty` formatter!
 
 **Another important part of the 3.5 release is the integration with
-[Harrow.io][1].** Harrow is platform, service and company that I founded with some
-friends to make my work on Capistrano more sustainable by making it into my day
-job. We built something that you can understand as being a "Continuous
+[Harrow.io][1].** Harrow is a platform, service and company that I founded with
+some friends to make my work on Capistrano more sustainable by making it into
+my day job. We built something that you can understand as being a "Continuous
 Integration" tool but with a really distinctly different design to anything
 else you migth have come across.
 
