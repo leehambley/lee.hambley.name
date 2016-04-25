@@ -72,10 +72,10 @@ facility to prompt is available) when running `$ cap install` which happens
 once and only once per project. We may expand the scope of this integration in
 the medium-term future depending on the community feedback. The integration
 does make one anonymous HTTP request to allow us to toggle things `off` in case
-things go badly, which can be opted out of by simply setting `$ git config ...`
-which will stop the integration doing *anything*. (We designed the integration
-to be *so* discreet that *it doesn't even write a dot-file with
-configuration!*)
+things go badly, which can be opted out of by simply setting `$ git config
+harrow.disabled true` which will stop the integration doing *anything*. (We
+designed the integration to be *so* discreet that *it doesn't even write a
+dot-file with configuration!*)
 
 ![A screenshot of the integration](/img/2016-04-24-seven-years/integration-screenshot.png)
 
