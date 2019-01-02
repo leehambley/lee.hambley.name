@@ -1,5 +1,5 @@
 # A sample Gemfile
-source "https://rubygems.org"
+source "http://www.rubygems.org"
 
 gem "middleman"
 gem "middleman-blog"
